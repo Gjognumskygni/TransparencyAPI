@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
@@ -19,5 +20,6 @@ namespace Application.Interfaces
         public DbSet<Proposer> Proposers { get; set; }
 
         public DbSet<Vote> Votes { get; set; }
+        public Task<int> SaveChanges();
     }
 }
