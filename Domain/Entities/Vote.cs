@@ -7,7 +7,6 @@ namespace Domain.Entities
 {
     public class Vote : BaseEntity
     {
-        public int MemberOfParliamentId { get; set; }
 
         public MemberOfParliament MemberOfParliament { get; set; }
 
