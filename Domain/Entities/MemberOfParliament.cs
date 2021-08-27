@@ -7,12 +7,6 @@ namespace Domain.Entities
 {
     public class MemberOfParliament : BaseEntity
     {
-        public int PersonId { get; set; }
-
-        public int PartyId { get; set; }
-
-        public int TermId { get; set; }
-
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }

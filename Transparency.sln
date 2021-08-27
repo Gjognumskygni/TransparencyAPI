@@ -9,13 +9,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{F6D0ECDB-3CCD-4FFC-B1CA-522C113795AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{985E9C62-3DB8-43A6-A809-9D0F0CFC0FA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{985E9C62-3DB8-43A6-A809-9D0F0CFC0FA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{8A7CACED-55A6-4B15-BE10-09E559143C4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{8A7CACED-55A6-4B15-BE10-09E559143C4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{940373DB-2C6B-4B61-B1F1-BEAD1652F016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{940373DB-2C6B-4B61-B1F1-BEAD1652F016}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{6E4D8A36-B0AD-4263-B51F-46D508835058}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{6E4D8A36-B0AD-4263-B51F-46D508835058}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8A7CACED-55A6-4B15-BE10-09E559143C4E} = {8A7CACED-55A6-4B15-BE10-09E559143C4E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

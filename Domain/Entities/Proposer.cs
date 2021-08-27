@@ -7,7 +7,6 @@ namespace Domain.Entities
 {
     public class Proposer : BaseEntity
     {
-        public int MemberOfParliamentId { get; set; }
         public MemberOfParliament MemberOfParliament { get; set; }
     }
 }

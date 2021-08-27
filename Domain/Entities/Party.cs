@@ -16,4 +16,3 @@ namespace Domain.Entities
         public DateTime EndDate { get; set; }
     }
 }
-}
