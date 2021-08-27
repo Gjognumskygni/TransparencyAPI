@@ -23,7 +23,7 @@ namespace Application.Features.PersonFeatures.Queries
             }
             public async Task<Person> Handle(GetPersonByIdQuery query, CancellationToken cancellationToken)
             {
-                var person = _context.Persons.Where(p => p.Id == query.Id).FirstOrDefault();
+                var person = await _context.Persons.Where(p => p.Id == query.Id).FirstOrDefaultAsync();
                 if (person == default) return null;
                 return person;
             }

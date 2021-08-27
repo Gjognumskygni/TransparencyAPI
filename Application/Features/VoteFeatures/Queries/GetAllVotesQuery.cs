@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.VoteFeatures.Queries
 {
-    class GetAllVotesQuery : IRequest<IEnumerable<Vote>>
+    public class GetAllVotesQuery : IRequest<IEnumerable<Vote>>
     {
         public class GetAllVotesQueryHandler : IRequestHandler<GetAllVotesQuery, IEnumerable<Vote>>
         {

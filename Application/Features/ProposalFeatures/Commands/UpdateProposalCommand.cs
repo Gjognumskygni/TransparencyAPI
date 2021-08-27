@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProposalFeatures.Commands
 {
-    class UpdateProposalCommand : IRequest<int>
+    public class UpdateProposalCommand : IRequest<int>
     {
         public int Id { get; set; }
         public ICollection<Proposer> Proposers { get; }

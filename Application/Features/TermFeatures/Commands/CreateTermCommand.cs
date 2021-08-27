@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace Application.Features.TermFeatures.Commands
 {
-    class CreateVoteCommand : IRequest<int>
+    public class CreateTermCommand : IRequest<int>
     {
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
-        public class CreateTermCommandHandler : IRequestHandler<CreateVoteCommand, int>
+        public class CreateTermCommandHandler : IRequestHandler<CreateTermCommand, int>
         {
             private readonly IApplicationDbContext _context;
             public CreateTermCommandHandler(IApplicationDbContext context)
             {
                 _context = context;
             }
-            public async Task<int> Handle(CreateVoteCommand command, CancellationToken cancellationToken)
+            public async Task<int> Handle(CreateTermCommand command, CancellationToken cancellationToken)
             {
                 var term = new Term();
                 term.StartDate = command.StartDate;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProposerFeatures.Commands
 {
-    class CreateProposerCommand : IRequest<int>
+    public class CreateProposerCommand : IRequest<int>
     {
         public MemberOfParliament MemberOfParliament { get; set; }
         public class CreateProposerCommandHandler : IRequestHandler<CreateProposerCommand, int>

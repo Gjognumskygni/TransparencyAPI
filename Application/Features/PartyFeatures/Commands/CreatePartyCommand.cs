@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.PartyFeatures.Commands
 {
-    class CreatePartyCommand : IRequest<int>
+    public class CreatePartyCommand : IRequest<int>
     {
         public string Letter { get; set; }
 

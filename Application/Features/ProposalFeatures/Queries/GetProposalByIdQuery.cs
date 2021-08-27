@@ -23,7 +23,7 @@ namespace Application.Features.ProposalFeatures.Queries
             }
             public async Task<Proposal> Handle(GetProposalByIdQuery query, CancellationToken cancellationToken)
             {
-                var proposal = _context.Proposals.Where(p => p.Id == query.Id).FirstOrDefault();
+                var proposal = await _context.Proposals.Where(p => p.Id == query.Id).FirstOrDefaultAsync();
                 if (proposal == default) return null;
                 return proposal;
             }

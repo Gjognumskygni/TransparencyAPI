@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.VoteFeatures.Commands
 {
-    class UpdateVoteCommand : IRequest<int>
+    public class UpdateVoteCommand : IRequest<int>
     {
         public int Id { get; set; }
 

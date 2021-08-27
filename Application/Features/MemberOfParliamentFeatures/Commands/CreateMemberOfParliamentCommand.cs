@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.MemberOfParliamentFeatures.Commands
 {
-    class CreateMemberOfParliamentCommand : IRequest<int>
+    public class CreateMemberOfParliamentCommand : IRequest<int>
     {
         public DateTime StartDate { get; set; }
 

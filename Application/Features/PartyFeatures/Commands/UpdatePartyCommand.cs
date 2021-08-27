@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.PartyFeatures.Commands
 {
-    class UpdatePartyCommand : IRequest<int>
+    public class UpdatePartyCommand : IRequest<int>
     {
         public int Id { get; set; }
         public string Letter { get; set; }

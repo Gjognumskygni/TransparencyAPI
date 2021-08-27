@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.MemberOfParliamentFeatures.Queries
 {
-    class GetAllMemberOfParliamentsQuery : IRequest<IEnumerable<MemberOfParliament>>
+    public class GetAllMemberOfParliamentsQuery : IRequest<IEnumerable<MemberOfParliament>>
     {
         public class GetAllMemberOfParliamentsQueryHandler : IRequestHandler<GetAllMemberOfParliamentsQuery, IEnumerable<MemberOfParliament>>
         {

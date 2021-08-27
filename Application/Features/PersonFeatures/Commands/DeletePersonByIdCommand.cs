@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.PersonFeatures.Commands
 {
-    class DeletePersonByIdCommand : IRequest<int>
+    public class DeletePersonByIdCommand : IRequest<int>
     {
         public int Id { get; set; }
         public class DeletePersonByIdCommandHandler : IRequestHandler<DeletePersonByIdCommand, int>

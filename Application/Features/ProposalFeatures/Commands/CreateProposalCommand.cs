@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProposalFeatures.Commands
 {
-    class CreateProposalCommand : IRequest<int>
+    public class CreateProposalCommand : IRequest<int>
     {
         public ICollection<Proposer> Proposers { get; }
         public ICollection<Vote> Votes { get; }

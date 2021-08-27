@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProposerFeatures.Commands
 {
-    class UpdateProposerCommand : IRequest<int>
+    public class UpdateProposerCommand : IRequest<int>
     {
         public int Id { get; set; }
         public MemberOfParliament MemberOfParliament { get; set; }

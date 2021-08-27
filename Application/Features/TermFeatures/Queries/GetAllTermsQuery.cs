@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace Application.Features.TermFeatures.Queries
 {
-    class GetAllVotesQuery : IRequest<IEnumerable<Term>>
+    public class GetAllTermsQuery : IRequest<IEnumerable<Term>>
     {
-        public class GetAllTermsQueryHandler : IRequestHandler<GetAllVotesQuery, IEnumerable<Term>>
+        public class GetAllTermsQueryHandler : IRequestHandler<GetAllTermsQuery, IEnumerable<Term>>
         {
             private readonly IApplicationDbContext _context;
             public GetAllTermsQueryHandler(IApplicationDbContext context)
             {
                 _context = context;
             }
-            public async Task<IEnumerable<Term>> Handle(GetAllVotesQuery request, CancellationToken cancellationToken)
+            public async Task<IEnumerable<Term>> Handle(GetAllTermsQuery request, CancellationToken cancellationToken)
             {
                 var termList = await _context.Terms.ToListAsync();
                 if (termList == null)

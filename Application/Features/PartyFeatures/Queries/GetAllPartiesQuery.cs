@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.PartyFeatures.Queries
 {
-    class GetAllPartiesQuery : IRequest<IEnumerable<Party>>
+    public class GetAllPartiesQuery : IRequest<IEnumerable<Party>>
     {
         public class GetAllPartysQueryHandler : IRequestHandler<GetAllPartiesQuery, IEnumerable<Party>>
         {

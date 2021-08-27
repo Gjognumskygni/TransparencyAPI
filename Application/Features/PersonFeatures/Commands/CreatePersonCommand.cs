@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.PersonFeatures.Commands
 {
-    class CreatePersonCommand : IRequest<int>
+    public class CreatePersonCommand : IRequest<int>
     {
         public string Name { get; set; }
         public class CreatePersonCommandHandler : IRequestHandler<CreatePersonCommand, int>

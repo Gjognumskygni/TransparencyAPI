@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProposerFeatures.Commands
 {
-    class DeleteProposerByIdCommand : IRequest<int>
+    public class DeleteProposerByIdCommand : IRequest<int>
     {
         public int Id { get; set; }
         public class DeleteProposerByIdCommandHandler : IRequestHandler<DeleteProposerByIdCommand, int>

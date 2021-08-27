@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.MemberOfParliamentFeatures.Commands
 {
-    class UpdateMemberOfParliamentCommand : IRequest<int>
+    public class UpdateMemberOfParliamentCommand : IRequest<int>
     {
         public int Id { get; set; }
         public DateTime StartDate { get; set; }

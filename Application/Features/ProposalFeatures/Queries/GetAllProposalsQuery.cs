@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProposalFeatures.Queries
 {
-    class GetAllProposalsQuery : IRequest<IEnumerable<Proposal>>
+    public class GetAllProposalsQuery : IRequest<IEnumerable<Proposal>>
     {
         public class GetAllProposalsQueryHandler : IRequestHandler<GetAllProposalsQuery, IEnumerable<Proposal>>
         {

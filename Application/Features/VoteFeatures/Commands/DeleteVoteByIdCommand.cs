@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.VoteFeatures.Commands
 {
-    class DeleteVoteByIdCommand : IRequest<int>
+    public class DeleteVoteByIdCommand : IRequest<int>
     {
         public int Id { get; set; }
         public class DeleteVoteByIdCommandHandler : IRequestHandler<DeleteVoteByIdCommand, int>

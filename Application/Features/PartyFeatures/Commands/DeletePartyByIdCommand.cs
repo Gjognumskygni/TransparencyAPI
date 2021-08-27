@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.PartyFeatures.Commands
 {
-    class DeletePartyByIdCommand : IRequest<int>
+    public class DeletePartyByIdCommand : IRequest<int>
     {
         public int Id { get; set; }
         public class DeletePartyByIdCommandHandler : IRequestHandler<DeletePartyByIdCommand, int>

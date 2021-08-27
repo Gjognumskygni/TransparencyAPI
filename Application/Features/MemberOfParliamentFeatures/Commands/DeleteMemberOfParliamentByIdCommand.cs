@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.MemberOfParliamentFeatures.Commands
 {
-    class DeleteMemberOfParliamentByIdCommand : IRequest<int>
+    public class DeleteMemberOfParliamentByIdCommand : IRequest<int>
     {
         public int Id { get; set; }
         public class DeleteMemberOfParliamentByIdCommandHandler : IRequestHandler<DeleteMemberOfParliamentByIdCommand, int>

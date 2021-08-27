@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.VoteFeatures.Commands
 {
-    class CreateVoteCommand : IRequest<int>
+    public class CreateVoteCommand : IRequest<int>
     {
         public MemberOfParliament MemberOfParliament { get; set; }
 
