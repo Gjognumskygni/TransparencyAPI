@@ -7,7 +7,7 @@ namespace Domain.Entities
 {
     public class Proposal : BaseEntity
     {
-        public ICollection<Proposer> Proposers { get; set; }
-        public ICollection<Vote> Votes { get; set; }
+        public ICollection<Proposer> Proposers { get; init; }
+        public ICollection<Vote> Votes { get; init; }
     }
 }

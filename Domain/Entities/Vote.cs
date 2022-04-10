@@ -8,8 +8,8 @@ namespace Domain.Entities
     public class Vote : BaseEntity
     {
 
-        public MemberOfParliament MemberOfParliament { get; set; }
+        public MemberOfParliament MemberOfParliament { get; init; }
 
-        public VoteType VoteType { get; set; }
+        public VoteType VoteType { get; init; }
     }
 }

@@ -7,8 +7,8 @@ namespace Domain.Entities
 {
     public class Term : BaseEntity
     {
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; init; }
 
-        public DateTime EndDate { get; set; }
+        public DateTime EndDate { get; init; }
     }
 }
