@@ -7,16 +7,16 @@ namespace Domain.Entities
 {
     public class MemberOfParliament : BaseEntity
     {
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; init; }
 
-        public DateTime EndDate { get; set; }
+        public DateTime EndDate { get; init; }
 
-        public MemberOfParliamentRole MemberOfParliamentRole { get; set; }
+        public MemberOfParliamentRole MemberOfParliamentRole { get; init; }
 
-        public Person Person { get; set; }
+        public Person Person { get; init; }
 
-        public Party Party { get; set; }
+        public Party Party { get; init; }
 
-        public Term Term { get; set; }
+        public Term Term { get; init; }
     }
 }

@@ -1,23 +1,20 @@
-using Application;
-using Microsoft.AspNetCore.Authentication;
+using Domain.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
 using Persistence;
+using Persistence.Repositories;
+using Services;
+using Services.Abstractions;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace WebApi
 {
@@ -37,9 +34,8 @@ namespace WebApi
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
 
             services.AddControllers();
-            services.AddApplication();
-            services.AddPersistence(Configuration);
-
+            services.AddScoped<IServiceManager, ServiceManager>();
+            services.AddScoped<IRepositoryManager, RepositoryManager>();
             #region API Versioning
             // Add API Versioning to the Project
             services.AddApiVersioning(config =>

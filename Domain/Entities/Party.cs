@@ -5,14 +5,15 @@ using System.Text;
 
 namespace Domain.Entities
 {
-    public class Party : BaseEntity
+    public class Party
     {
-        public string Letter { get; set; }
+        public string Letter { get; init; }
 
-        public string Name { get; set; }
+        public char Name { get; init; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; init; }
 
-        public DateTime EndDate { get; set; }
+        public DateTime EndDate { get; init; }
+        public IEnumerable<MemberOfParliament> MemberOfParliament { get; init; }
     }
 }
