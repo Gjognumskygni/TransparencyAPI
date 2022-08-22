@@ -1,4 +1,5 @@
-﻿using Domain.Repositories;
+﻿using Domain.Entities;
+using Domain.Repositories;
 using Persistence.Context;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    internal class TermRepository : ITermRepository
+    public class TermRepository : BaseRepository<Term>, ITermRepository
     {
-        private readonly ApplicationDbContext _context;
-
-        public TermRepository(ApplicationDbContext context) => _context = context;
+        public TermRepository(ApplicationDbContext context) : base(context)
+        {
+        }
     }
 }
