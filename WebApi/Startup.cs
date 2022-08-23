@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
 using Persistence;
+using Persistence.Context;
 using Persistence.Repositories;
 using Services;
 using Services.Abstractions;
@@ -34,8 +36,18 @@ namespace WebApi
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
 
             services.AddControllers();
-            services.AddScoped<IServiceManager, ServiceManager>();
-            services.AddScoped<IRepositoryManager, RepositoryManager>();
+
+            services.AddScoped<IMemberOfParliamentRepository, MemberOfParliamentRepository>()
+                    .AddScoped<IPartyRepository, PartyRepository>()
+                    .AddScoped<IProposalRepository, ProposalRepository>()
+                    .AddScoped<ITermRepository, TermRepository>();
+
+            services.AddScoped<IMemberOfParliamentService, MemberOfParliamentService>();
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+
             #region API Versioning
             // Add API Versioning to the Project
             services.AddApiVersioning(config =>
@@ -72,8 +84,8 @@ namespace WebApi
 
             app.UseRouting();
 
-            app.UseAuthentication();
-            app.UseAuthorization();
+            //app.UseAuthentication();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

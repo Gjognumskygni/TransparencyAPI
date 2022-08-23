@@ -1,17 +1,13 @@
-﻿using Domain.Repositories;
+﻿using Domain.Entities;
+using Domain.Repositories;
 using Persistence.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    internal class PartyRepository : IPartyRepository
+    public class PartyRepository : BaseRepository<Party>, IPartyRepository
     {
-        private readonly ApplicationDbContext _context;
-
-        public PartyRepository(ApplicationDbContext context) => _context = context;
+        public PartyRepository(ApplicationDbContext context) : base(context)
+        {
+        }
     }
 }

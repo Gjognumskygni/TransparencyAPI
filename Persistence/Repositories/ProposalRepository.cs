@@ -1,17 +1,13 @@
-﻿using Domain.Repositories;
+﻿using Domain.Entities;
+using Domain.Repositories;
 using Persistence.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    internal class ProposalRepository : IProposalRepository
+    public class ProposalRepository : BaseRepository<Proposal>, IProposalRepository
     {
-        private readonly ApplicationDbContext _context;
-
-        public ProposalRepository(ApplicationDbContext context) => _context = context;
+        public ProposalRepository(ApplicationDbContext context) : base(context)
+        {
+        }
     }
 }

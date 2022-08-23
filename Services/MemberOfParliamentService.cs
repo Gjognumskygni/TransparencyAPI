@@ -1,15 +1,20 @@
-﻿using Domain.Repositories;
+﻿using Domain.Entities;
+using Domain.Repositories;
 using Services.Abstractions;
 
 namespace Services
 {
-    internal class MemberOfParliamentService : IMemberOfParliamentService
+    public class MemberOfParliamentService : IMemberOfParliamentService
     {
-        private readonly IRepositoryManager _repositoryManager;
+        private readonly IMemberOfParliamentRepository _memberOfParliamentRepository;
 
-        public MemberOfParliamentService(IRepositoryManager repositoryManager)
+        public MemberOfParliamentService(IMemberOfParliamentRepository memberOfParliamentRepository)
         {
-            repositoryManager = _repositoryManager;
+            _memberOfParliamentRepository = memberOfParliamentRepository;
         }
+
+        public async Task<IEnumerable<MemberOfParliament>> GetAllAsync() => await _memberOfParliamentRepository.GetAllASync();
+
+        public async Task<MemberOfParliament> GetByIdAsync(Guid id) => await _memberOfParliamentRepository.GetByIdAsync(id);
     }
 }

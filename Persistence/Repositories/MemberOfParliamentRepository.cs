@@ -1,17 +1,18 @@
-﻿using Domain.Repositories;
+﻿using Domain.Entities;
+using Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    internal class MemberOfParliamentRepository : IMemberOfParliamentRepository
+    public class MemberOfParliamentRepository : BaseRepository<MemberOfParliament>, IMemberOfParliamentRepository
     {
-        private readonly ApplicationDbContext _context;
+        public MemberOfParliamentRepository(ApplicationDbContext context) : base(context)
+        {
+        }
 
-        public MemberOfParliamentRepository(ApplicationDbContext context) => _context = context;
+        public async Task<MemberOfParliament> GetByIdAsync(Guid id) => await base._context.MemberOfParliaments.SingleOrDefaultAsync(e => e.Id == id);
     }
 }
