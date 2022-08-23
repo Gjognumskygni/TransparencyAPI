@@ -37,8 +37,7 @@ namespace WebApi
 
             services.AddControllers();
 
-            services.AddScoped<IUnitOfWork, UnitOfWork>()
-                    .AddScoped<IMemberOfParliamentRepository, MemberOfParliamentRepository>()
+            services.AddScoped<IMemberOfParliamentRepository, MemberOfParliamentRepository>()
                     .AddScoped<IPartyRepository, PartyRepository>()
                     .AddScoped<IProposalRepository, ProposalRepository>()
                     .AddScoped<ITermRepository, TermRepository>();

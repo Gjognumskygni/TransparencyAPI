@@ -6,15 +6,15 @@ namespace Services
 {
     public class MemberOfParliamentService : IMemberOfParliamentService
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMemberOfParliamentRepository _memberOfParliamentRepository;
 
-        public MemberOfParliamentService(IUnitOfWork unitOfWork)
+        public MemberOfParliamentService(IMemberOfParliamentRepository memberOfParliamentRepository)
         {
-            _unitOfWork = unitOfWork;
+            _memberOfParliamentRepository = memberOfParliamentRepository;
         }
 
-        public async Task<IEnumerable<MemberOfParliament>> GetAllAsync() => await _unitOfWork.MembersOfParliament.GetAllASync();
+        public async Task<IEnumerable<MemberOfParliament>> GetAllAsync() => await _memberOfParliamentRepository.GetAllASync();
 
-        public async Task<MemberOfParliament> GetByIdAsync(Guid id) => await _unitOfWork.MembersOfParliament.GetByIdAsync(id);
+        public async Task<MemberOfParliament> GetByIdAsync(Guid id) => await _memberOfParliamentRepository.GetByIdAsync(id);
     }
 }
